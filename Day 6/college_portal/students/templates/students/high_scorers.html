@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>High Scorers</title>
+</head>
+<body>
+<h1>High Scorers - 80 or Above</h1>
+{% for student in students %}
+<p>
+{{ student.name }} -
+{{ student.marks }} -
+{{ student.department }}
+</p>
+{% empty %}
+<p>No high scorers found.</p>
+{% endfor %}
+<a href="{% url 'home' %}">Home</a>
+</body>
+</html>

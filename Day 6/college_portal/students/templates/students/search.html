@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Search Student</title>
+</head>
+<body>
+<h1>Search Student</h1>
+<form method="GET">
+<input type="text" name="q"
+placeholder="Enter student name"
+value="{{ query }}">
+<button type="submit">Search</button>
+</form>
+<br>
+{% for student in students %}
+<p>
+<b>{{ student.name }}</b> -
+{{ student.marks }} -
+{{ student.department }}
+</p>
+{% empty %}
+<p>No matching student found.</p>
+{% endfor %}
+<a href="{% url 'home' %}">Home</a>
+</body>
+</html>
